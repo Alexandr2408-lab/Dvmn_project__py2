@@ -8,8 +8,8 @@ LOGIN = os.getenv('LOGIN')
 TOKEN = os.getenv('TOKEN')
 
 letter = """\
-From: shyrick98kuzin.yandex.ru
-To: elenacuzina@yandex.ru
+From: shyrick98kuzin@yandex.ru
+To: shyrick98kuzin@yandex.ru
 Subject: Приглашение!
 Content-Type: text/plain; charset="UTF-8";
 
