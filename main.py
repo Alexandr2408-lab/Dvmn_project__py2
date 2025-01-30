@@ -1,10 +1,11 @@
 import os
 from dotenv import load_dotenv
 import smtplib
+
 load_dotenv()
 
-Account_login = os.getenv('LOGIN')
-Account_password = os.getenv('TOKEN')
+LOGIN = os.getenv('LOGIN')
+TOKEN = os.getenv('TOKEN')
 
 letter = """\
 From: shyrick98kuzin.yandex.ru
@@ -26,8 +27,8 @@ letter = letter.replace("%my_name%",sender_name)
 letter = letter.replace("%website%",website)
 letter = letter.encode("UTF-8")
 server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)
-server.login(Account_login, Account_password)
-server.sendmail(Account_login, Account_login, letter)
+server.login(LOGIN, TOKEN)
+server.sendmail(LOGIN, LOGIN, letter)
 server.quit()
 
 print(letter)
