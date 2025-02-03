@@ -9,8 +9,8 @@ TOKEN = os.getenv("TOKEN")
 ADRESS = os.getenv("ADRESS")
 
 letter = """\
-From: shyrick98kuzin@yandex.ru
-To: ya.bao98@yandex.ru
+From:shyrick98kuzin@yandex.ru
+To:ya.bao98@yandex.ru
 Subject: Приглашение!
 Content-Type: text/plain; charset="UTF-8";
 
@@ -26,10 +26,10 @@ sender_name = "Alexandr"
 letter = letter.replace("%friend_name%",friend_name)
 letter = letter.replace("%my_name%",sender_name)
 letter = letter.replace("%website%",website)
+letter = letter.replace("shyrick98kuzin@yandex.ru",LOGIN)
+letter = letter.replace("ya.bao98@yandex.ru",ADRESS)
 letter = letter.encode("UTF-8")
 server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)
 server.login(LOGIN, TOKEN)
 server.sendmail(LOGIN, ADRESS, letter)
 server.quit()
-
-print(letter)
